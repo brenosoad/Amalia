@@ -170,6 +170,7 @@ h2{font-size:clamp(38px,4.6vw,58px);color:var(--navy);letter-spacing:-.025em}
 .contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);background:var(--cream);resize:none}
 .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--rose);outline-offset:1px}
 .contact-form .form-submit{width:100%;justify-content:center;background:var(--navy);color:#fff}
+.form-privacy{font-size:11px;color:#9aa4a8;text-align:center;margin-top:12px;line-height:1.5}
 .cta-details{margin-top:38px;padding-top:38px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:center;gap:50px;flex-wrap:wrap;font-size:13px;color:#c6ced1}
 .cta-icon{display:flex;justify-content:center;margin-bottom:10px}
 .cta-icon svg{width:20px;height:20px;color:var(--pink)}
@@ -190,7 +191,7 @@ footer{background:#1b2e38;color:white;padding:64px 0 0}
 .credit-links{display:flex;align-items:center;gap:14px}
 .credit-links a{color:#7c8a8f;display:flex}
 .credit-links a:hover{color:var(--pink)}
-.credit-links svg{width:16px;height:16px}
+.credit-links svg{width:18px;height:18px}
 
 /* JS enhancements */
 .progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--rose);z-index:100;width:0%;transition:width .08s linear}
