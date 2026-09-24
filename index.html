@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Amália Oliveira · Psicóloga Infantil">
 <meta property="og:description" content="Atendimento psicológico infantil acolhedor em São Carlos, SP.">
-<meta property="og:image" content="assets/hero-photo.jpg">
+<meta property="og:image" content="assets/footer-logo.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fcfaf8">
@@ -48,9 +48,7 @@ nav a{opacity:.9}nav a:hover{color:var(--rose)}
 body.nav-open{overflow:hidden}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-.hero{position:relative;overflow:hidden;padding:110px 0 90px}
-.hero-pattern{position:absolute;inset:0;z-index:0;opacity:.9;background-image:url('assets/hero-pattern.jpg');background-size:500px auto;background-repeat:repeat}
-.hero-gradient{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg, rgba(219,232,238,.35) 0%, rgba(252,250,248,.55) 100%)}
+.hero{position:relative;overflow:hidden;padding:110px 0 90px;background:radial-gradient(60% 75% at 80% 35%,#f4e4e7 0%,rgba(244,228,231,0) 70%),radial-gradient(55% 60% at 90% 100%,#e2edf2 0%,rgba(226,237,242,0) 70%),var(--cream)}
 .hero .wrap{position:relative;z-index:1}
 .hero-wave{position:absolute;left:0;bottom:0;width:100%;height:70px;z-index:1;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70'%3E%3Cpath d='M0,35 C360,80 1080,-10 1440,35 L1440,70 L0,70 Z' fill='%23ffffff'/%3E%3C/svg%3E");
@@ -58,13 +56,77 @@ body.nav-open{overflow:hidden}
 }
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .hero-inner{max-width:520px}
-.hero-photo-wrap{position:relative}
-.hero-photo-wrap:before{content:"";position:absolute;width:88%;height:88%;background:var(--pink2);border-radius:20px;right:-24px;top:-24px;z-index:0}
-.hero-photo-card{position:relative;z-index:1;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 40px 70px -25px rgba(33,55,68,.3)}
-.hero-photo-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.6;object-position:top center;display:block}
-.hero-photo-card .hero-caption{padding:16px 22px;text-align:left}
-.hero-photo-card .hero-caption strong{display:block;font-family:"Playfair Display";font-size:17px;font-weight:600;color:var(--navy)}
-.hero-photo-card .hero-caption span{font-size:12.5px;color:var(--muted)}
+/* HERO 3D: um desenho infantil ganhando vida */
+.hero-inner{position:relative;z-index:2}
+.hero-inner:before{content:"";position:absolute;z-index:-1;inset:-90px -140px -90px -260px;pointer-events:none;background:radial-gradient(closest-side,rgba(252,250,248,.94) 55%,rgba(252,250,248,0))}
+.hero-visual{position:relative;z-index:0;aspect-ratio:4/4.6;pointer-events:none}
+.hero-scene{--intro:4s;--pitch:70deg;--stand:-90deg;position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;container-type:size;perspective:190cqw;perspective-origin:64% 42%}
+.hero-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(252,250,248,.93) 0%,rgba(252,250,248,.86) 26%,rgba(252,250,248,.45) 40%,rgba(252,250,248,0) 54%)}
+.hs-camera,.hs-world,.hs-turn{position:absolute;transform-style:preserve-3d}
+.hs-camera{inset:0}
+.hs-world{right:0;top:50%;width:max(100%,calc(100cqh*800/470));aspect-ratio:800/470;translate:0 -50%;transform-origin:64% 74%}
+.hs-turn{inset:0;transform-origin:66% 74%}
+.hs-paper{position:absolute;inset:0;border-radius:3px;background:#fffdf9;box-shadow:0 1px 2px rgba(33,55,68,.08),0 18px 40px -18px rgba(33,55,68,.35);overflow:hidden}
+.hs-paper:before{content:"";position:absolute;inset:0;opacity:.55;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .32 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hs-paper svg{position:absolute;inset:0;width:100%;height:100%}
+.hs-light{position:absolute;inset:0;opacity:0;background:linear-gradient(180deg,rgba(33,55,68,.10) 0%,transparent 45%),radial-gradient(90% 70% at 75% 85%,rgba(255,244,222,.55),transparent 70%)}
+.hs-edge{position:absolute;left:0;right:0;bottom:0;height:1.4%;background:#e7e1d8;transform-origin:50% 100%;transform:rotateX(-90deg)}
+.hs-el{position:absolute;left:calc(var(--x)*100%/800);top:calc(var(--y)*100%/470);width:calc(var(--w)*100%/800);height:calc(var(--h)*100%/470);transform-origin:50% 100%;translate:0 0 calc(var(--lz,1)*.06cqw)}
+.hs-el svg,.hs-in svg{display:block;width:100%;height:100%;overflow:visible}
+.hs-in{position:absolute;inset:0;transform-origin:50% 100%}
+.hs-shadow{position:absolute;left:calc(var(--x)*100%/800);top:calc(var(--y)*100%/470);width:calc(var(--w)*100%/800);height:calc(var(--h)*100%/470);border-radius:50%;background:radial-gradient(closest-side,rgba(33,55,68,.42),rgba(33,55,68,0));opacity:0;translate:0 -30%;scale:1.25 1.6}
+.hs-pencil{position:absolute;left:calc(var(--x)*100%/800);top:calc(var(--y)*100%/470);width:calc(var(--w)*100%/800);height:calc(var(--h)*100%/470);transform-origin:0 50%;rotate:var(--r);translate:0 0 .4cqw;filter:drop-shadow(0 .6cqw .5cqw rgba(33,55,68,.22))}
+.hs-pencil svg{display:block;width:100%;height:100%}
+
+/* traços do desenho */
+.hs-s{fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:hs-draw 1s var(--dd,0s) cubic-bezier(.55,.1,.35,1) forwards}
+.hs-f{opacity:0;animation:hs-fill .9s calc(var(--dd,0s) + .55s) ease forwards}
+@keyframes hs-draw{0%,98%{stroke-linecap:butt}100%{stroke-dashoffset:0;stroke-linecap:round}}
+@keyframes hs-fill{to{opacity:1}}
+.hs-paper-fade{opacity:0;animation:hs-fill .7s .15s ease forwards}
+
+/* loop: desenho plano > cena 3D > desenho plano (10s) */
+.hs-camera{animation:hs-cam 10s var(--intro) cubic-bezier(.45,0,.3,1) infinite}
+.hs-world{animation:hs-pitch 10s var(--intro) cubic-bezier(.5,0,.25,1) infinite}
+.hs-turn{animation:hs-yaw 10s var(--intro) cubic-bezier(.45,0,.55,1) infinite}
+.hs-up{animation:hs-up 10s calc(var(--intro) + var(--lag,0s)) cubic-bezier(.5,0,.25,1) infinite}
+.hs-sky{animation:hs-sky 10s calc(var(--intro) + var(--lag,0s)) cubic-bezier(.5,0,.25,1) infinite}
+.hs-shadow,.hs-light{animation:hs-glow 10s calc(var(--intro) + var(--lag,0s)) cubic-bezier(.5,0,.25,1) infinite}
+.hs-sway{animation:hs-sway 10s var(--intro) ease-in-out infinite}
+.hs-drift{animation:hs-drift 10s var(--intro) ease-in-out infinite}
+.hs-rays{animation:hs-rays 10s var(--intro) linear infinite}
+.hs-smoke{animation:hs-smoke 10s var(--intro) ease-in-out infinite}
+.hs-fly{animation:hs-fly 10s var(--intro) cubic-bezier(.45,0,.4,1) infinite}
+.hs-wing{transform-box:fill-box;transform-origin:100% 50%;animation:hs-flap 10s var(--intro) linear infinite}
+.hs-wing.r{transform-origin:0 50%}
+
+@keyframes hs-cam{0%,11%{transform:translate3d(0,0,0)}52%{transform:translate3d(-5cqw,-2cqw,20cqw)}89%,100%{transform:translate3d(0,0,0)}}
+@keyframes hs-pitch{0%,10%{transform:rotateX(0) translate3d(0,0,0) scale(1)}30%,70%{transform:rotateX(var(--pitch)) translate3d(0,-6cqw,0) scale(1.3)}90%,100%{transform:rotateX(0) translate3d(0,0,0) scale(1)}}
+@keyframes hs-yaw{0%,12%{transform:rotateZ(0)}42%{transform:rotateZ(-17deg)}70%{transform:rotateZ(12deg)}90%,100%{transform:rotateZ(0)}}
+@keyframes hs-up{0%,10%{transform:rotateX(0)}30%,70%{transform:rotateX(var(--stand))}90%,100%{transform:rotateX(0)}}
+@keyframes hs-sky{0%,10%{transform:rotateX(0) translateY(0)}30%,70%{transform:rotateX(var(--stand)) translateY(var(--lift,-40%))}90%,100%{transform:rotateX(0) translateY(0)}}
+@keyframes hs-glow{0%,10%{opacity:0}30%,70%{opacity:1}90%,100%{opacity:0}}
+@keyframes hs-sway{0%,28%{rotate:0deg}38%{rotate:3deg}48%{rotate:-2.5deg}58%{rotate:2deg}68%{rotate:-1deg}78%,100%{rotate:0deg}}
+@keyframes hs-drift{0%,20%{translate:0 0}50%{translate:14% 0}80%,100%{translate:0 0}}
+@keyframes hs-rays{0%,14%{rotate:0deg}50%{rotate:28deg}86%,100%{rotate:0deg}}
+@keyframes hs-smoke{0%,24%{opacity:1;translate:0 0;scale:1}48%{opacity:.25;translate:3% -34%;scale:1.25}50%{opacity:0;translate:3% -40%;scale:1.3}52%{opacity:0;translate:0 12%;scale:.8}66%{opacity:1;translate:0 0;scale:1}100%{opacity:1;translate:0 0;scale:1}}
+@keyframes hs-fly{0%,24%{translate:0 0 0}40%{translate:-60% -150% 0}56%{translate:40% -230% 0}72%{translate:-20% -90% 0}86%,100%{translate:0 0 0}}
+
+@keyframes hs-flap{0%,26%{scale:1 1}27.25%{scale:.35 1}28.50%{scale:1 1}29.75%{scale:.35 1}31.00%{scale:1 1}32.25%{scale:.35 1}33.50%{scale:1 1}34.75%{scale:.35 1}36.00%{scale:1 1}37.25%{scale:.35 1}38.50%{scale:1 1}39.75%{scale:.35 1}41.00%{scale:1 1}42.25%{scale:.35 1}43.50%{scale:1 1}44.75%{scale:.35 1}46.00%{scale:1 1}47.25%{scale:.35 1}48.50%{scale:1 1}49.75%{scale:.35 1}51.00%{scale:1 1}52.25%{scale:.35 1}53.50%{scale:1 1}54.75%{scale:.35 1}56.00%{scale:1 1}57.25%{scale:.35 1}58.50%{scale:1 1}59.75%{scale:.35 1}61.00%{scale:1 1}62.25%{scale:.35 1}63.50%{scale:1 1}64.75%{scale:.35 1}66.00%{scale:1 1}67.25%{scale:.35 1}68.50%{scale:1 1}69.75%{scale:.35 1}71.00%{scale:1 1}72.25%{scale:.35 1}73.50%{scale:1 1}100%{scale:1 1}}
+
+/* pausa fora da tela */
+.hero-scene.hs-paused *,.hero-scene.hs-paused *:before,.hero-scene.hs-paused *:after{animation-play-state:paused!important}
+
+/* acessibilidade: sem animação, mostra a cena 3D estática */
+@media (prefers-reduced-motion:reduce){
+.hero-scene *{animation:none!important}
+.hs-s{stroke-dashoffset:0}.hs-f,.hs-paper-fade{opacity:1}
+.hs-world{transform:rotateX(var(--pitch)) translate3d(0,-6cqw,0) scale(1.3)}
+.hs-turn{transform:rotateZ(-12deg)}
+.hs-up{transform:rotateX(var(--stand))}
+.hs-sky{transform:rotateX(var(--stand)) translateY(var(--lift,-40%))}
+.hs-shadow,.hs-light{opacity:1}
+}
 
 .hero-copy{font-size:18px;max-width:500px;color:var(--muted);margin:24px 0 32px}
 .hero-copy strong{color:var(--navy);font-weight:700}
@@ -90,13 +152,16 @@ h1{font-size:clamp(52px,6.4vw,84px);max-width:670px;color:var(--navy);letter-spa
 .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:40px;align-items:start;box-shadow:0 24px 50px -32px rgba(20,32,28,.18)}
 .about-frame{border-radius:16px;overflow:hidden;aspect-ratio:3/3.3;background:#d2c4c6}
 .about-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.about-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:26px;text-align:center;background:linear-gradient(155deg,var(--blue) 0%,var(--pink) 100%)}
+.badge-mark{font-family:"Playfair Display";font-size:38px;color:var(--navy)}
+.about-badge p{font-family:"Playfair Display";font-style:italic;font-size:15px;color:var(--navy);line-height:1.55}
 .about-caption{text-align:center;margin-top:14px}
 .about-caption strong{display:block;font-family:"Playfair Display";font-size:18px;font-weight:600;color:var(--navy)}
 .about-caption span{font-size:12.5px;color:var(--muted)}
 .about-copy h2{margin-bottom:14px;font-size:clamp(1.6rem,2.4vw,2rem)}
 .about-copy .lead-bold{font-weight:700;color:var(--navy);font-size:15.5px;margin:0 0 14px}
 
-.fact-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.fact-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
 .fact-strip strong{display:block;font-family:"DM Sans",sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:3px}
 .fact-strip span{font-size:11.5px;color:var(--muted)}
 .about-copy p{color:var(--muted);margin:0 0 14px;font-size:14.5px;line-height:1.55}
@@ -233,6 +298,7 @@ nav a.active{color:var(--rose);font-weight:700}
 
 
 @media(max-width:900px){
+.hero-scene{perspective-origin:70% 78%}.hs-world{width:190cqw;top:auto;bottom:0;translate:none}.hs-paper{box-shadow:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%);mask-image:linear-gradient(180deg,transparent 0,#000 16%)}.hero-veil{background:linear-gradient(180deg,rgba(252,250,248,.94) 0%,rgba(252,250,248,.85) 42%,rgba(252,250,248,0) 60%)}
 nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.signs-grid,.consult-grid,.faq-grid{grid-template-columns:1fr}.faq-side{position:static}.faq-illustration{width:160px;margin:24px auto 0;display:block}.att-grid{grid-template-columns:1fr}.att-side{grid-template-columns:1fr 1fr}.family-grid{grid-template-columns:1fr}.family-grid.open .family-card{border-left:none;border-top:1px solid rgba(33,55,68,.14);padding:28px 0 0}.family-grid.open .family-card:first-child{border-top:none;padding-top:0}.intro-grid{grid-template-columns:1fr}.intro-item{border-right:0;border-bottom:1px solid var(--line)}.intro-item:last-child{border-bottom:0}.signs{grid-template-columns:1fr 1fr}.about-photo-col{max-width:280px;margin:0 auto 28px}.testi-grid{grid-template-columns:1fr 1fr;gap:16px}.footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
@@ -255,8 +321,119 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
 </header>
 
 <section class="hero">
-  <div class="hero-pattern" aria-hidden="true"></div>
-  <div class="hero-gradient" aria-hidden="true"></div>
+  <div class="hero-scene" id="heroScene" aria-hidden="true">
+    <div class="hs-camera"><div class="hs-world"><div class="hs-turn">
+      <div class="hs-paper">
+        <svg viewBox="0 0 800 470" preserveAspectRatio="none">
+          <g style="--dd:.35s">
+            <path class="hs-s" pathLength="1" stroke="#cfdfe6" stroke-width="3.2" d="M430 26c24-5 48 3 74-2s46 2 70-1M452 42c30-4 56 2 82-1M640 20c14-3 26 2 40-1M60 18c22-4 42 2 64-1M210 34c18-3 34 2 50-1"/>
+          </g>
+          <g style="--dd:.6s">
+            <path class="hs-f" fill="#e7efe4" d="M0 302c60-8 120 4 190 0s150-12 230-5 160 8 250 2 100-4 130 0V470H0Z"/>
+            <path class="hs-s" pathLength="1" stroke="#cfdccb" stroke-width="1.6" d="M24 330l20-8M90 360l22-10M30 410l20-9M170 390l22-9M260 352l20-8M330 420l22-10M400 340l18-8M610 350l20-9M760 332l20-9M770 452l20-9M430 456l18-8M220 448l20-9"/>
+          </g>
+          <g style="--dd:.8s">
+            <path class="hs-f" fill="#f3e9dc" d="M531 364c-3 30 42 38 32 66-4 14 2 28 8 40h42c-8-12-14-26-8-42 10-28-36-36-34-64Z"/>
+            <path class="hs-s" pathLength="1" stroke="#d8c5ad" stroke-width="1.8" d="M531 364c-3 30 42 38 32 66-4 14 2 28 8 40M565 364c-2 28 44 36 34 64-6 16 0 30 8 42"/>
+          </g>
+          <g style="--dd:1.9s">
+            <path class="hs-s" pathLength="1" stroke="#9fb5a3" stroke-width="1.8" d="M404 356l4-9 3 8 4-10 3 9M640 372l3-8 3 7 4-9 3 8M770 372l4-9 3 8 4-10 3 9M120 336l3-8 3 7 4-9 3 8M300 390l4-9 3 8 4-10 3 9M40 380l3-8 3 7 4-9 3 8M690 452l3-8 3 7 4-9 3 8"/>
+            <path class="hs-f" fill="#d9d3cb" d="M640 404a4 3 0 1 0 8 0a4 3 0 1 0-8 0M500 380a3 2.4 0 1 0 6 0a3 2.4 0 1 0-6 0M210 370a3 2.4 0 1 0 6 0a3 2.4 0 1 0-6 0"/>
+          </g>
+        </svg>
+        <div class="hs-light"></div>
+        <div class="hs-shadow" style="--x:458;--y:346;--w:174;--h:32"></div>
+        <div class="hs-shadow" style="--x:666;--y:334;--w:92;--h:28"></div>
+        <div class="hs-shadow" style="--x:418;--y:422;--w:46;--h:14"></div>
+        <div class="hs-shadow" style="--x:463;--y:438;--w:44;--h:13"></div>
+        <div class="hs-shadow" style="--x:694;--y:418;--w:46;--h:14"></div>
+        <div class="hs-shadow" style="--x:764;--y:392;--w:38;--h:12"></div>
+      </div>
+      <div class="hs-edge"></div>
+
+      <!-- colinas -->
+      <div class="hs-el hs-up" style="--x:0;--y:205;--w:800;--h:70;--dd:.3s;--lz:2">
+        <svg viewBox="0 0 800 70"><path class="hs-f" fill="#e3ebe0" d="M0 70V36c60-20 150-28 230-10 70 16 130 4 200-10s150-14 220 2 100 12 150 6v46Z"/><path class="hs-s" pathLength="1" stroke="#b7c8b8" d="M0 36c60-20 150-28 230-10 70 16 130 4 200-10s150-14 220 2 100 12 150 6"/></svg>
+      </div>
+      <div class="hs-el hs-up" style="--x:0;--y:232;--w:800;--h:84;--dd:.45s;--lz:3">
+        <svg viewBox="0 0 800 84"><path class="hs-f" fill="#d3e0d1" d="M0 84V48c70-26 170-30 260-8 80 20 150 2 230-14 80-16 170-8 240 12 30 8 50 10 70 8v38Z"/><path class="hs-s" pathLength="1" stroke="#9fb5a3" d="M0 48c70-26 170-30 260-8 80 20 150 2 230-14 80-16 170-8 240 12 30 8 50 10 70 8"/></svg>
+      </div>
+
+      <!-- sol e nuvens -->
+      <div class="hs-el hs-sky" style="--x:680;--y:34;--w:84;--h:84;--dd:1.45s;--lift:-62%;--lz:4">
+        <div class="hs-in hs-rays" style="transform-origin:50% 50%;animation-timing-function:ease-in-out"><svg viewBox="0 0 70 70"><path class="hs-s" pathLength="1" stroke="#d9b86a" stroke-width="2.4" d="M35 4v8M35 58v8M4 35h8M58 35h8M13 13l6 6M51 51l6 6M57 13l-6 6M19 51l-6 6"/></svg></div>
+        <svg viewBox="0 0 70 70"><circle class="hs-f" cx="35.6" cy="35.8" r="17" fill="#f3e3b6"/><circle class="hs-s" pathLength="1" cx="35" cy="35" r="17" stroke="#d6b463"/></svg>
+      </div>
+      <div class="hs-el hs-sky" style="--x:440;--y:70;--w:130;--h:62;--dd:1.65s;--lift:-78%;--lz:5">
+        <div class="hs-in hs-drift"><svg viewBox="0 0 96 46"><path class="hs-f" fill="#fff" d="M15 41c-10 0-12-14-1-16 0-12 16-16 24-8 6-12 26-12 32 0 12-4 24 6 18 16 6 8-2 12-8 10Z"/><path class="hs-s" pathLength="1" stroke="#a8bdc7" d="M14 40c-10 0-11-14 0-16 0-12 16-16 24-8 6-12 26-12 32 0 12-4 24 6 18 16 6 8-2 12-8 10Z"/></svg></div>
+      </div>
+      <div class="hs-el hs-sky" style="--x:604;--y:132;--w:84;--h:39;--dd:1.8s;--lift:-60%;--lz:5">
+        <div class="hs-in hs-drift" style="animation-direction:reverse"><svg viewBox="0 0 64 30"><path class="hs-f" fill="#fff" d="M10 27c-7 0-8-9-1-10 0-8 11-10 16-5 4-8 17-8 21 0 8-3 16 4 12 10 4 5-1 8-5 7Z"/><path class="hs-s" pathLength="1" stroke="#a8bdc7" d="M9 26c-7 0-7-9 0-10 0-8 11-10 16-5 4-8 17-8 21 0 8-3 16 4 12 10 4 5-1 8-5 7Z"/></svg></div>
+      </div>
+
+      <!-- casinha -->
+      <div class="hs-el hs-up" style="--x:470;--y:170;--w:150;--h:194;--dd:.95s;--lz:6">
+        <svg viewBox="0 0 108 140">
+          <g transform="translate(0 36)">
+            <path class="hs-f" fill="#f7e8eb" d="M16 52l78-2 1 52-80 1Z"/>
+            <path class="hs-f" fill="#cfa7b1" d="M8 56l46-44 48 41Z"/>
+            <path class="hs-f" fill="#b99099" d="M75 33V18h11v26Z"/>
+            <path class="hs-f" fill="#9fb3bd" d="M45 104V78q9-8 18 0v26Z"/>
+            <path class="hs-f" fill="#e3eef3" d="M71 64h16v16H71Z"/>
+            <path class="hs-f" fill="#e3eef3" d="M23 64h15v15H23Z"/>
+            <path class="hs-s" pathLength="1" stroke="#b58e98" d="M15 51l78-1 1 52-80 1Z"/>
+            <path class="hs-s" pathLength="1" stroke="#9b7380" d="M7 55l46-44 48 42M74 34V18h11v25"/>
+            <path class="hs-s" pathLength="1" stroke="#5f7481" d="M44 103V77q9-8 18 0v26M57 91h.5"/>
+            <path class="hs-s" pathLength="1" stroke="#7f9aa6" d="M70 63h16v16H70ZM78 63v16M70 71h16M22 63h15v15H22ZM29.5 63v15M22 70.5h15"/>
+          </g>
+        </svg>
+        <div class="hs-in hs-smoke" style="left:66%;top:8%;width:20%;height:30%;right:auto;bottom:auto;transform-origin:50% 100%"><svg viewBox="0 0 22 42"><path class="hs-s" pathLength="1" stroke="#c3ced3" stroke-width="2" style="--dd:2.35s" d="M8 42c-6-6 6-9 0-15s7-9 1-15 6-8 3-12"/></svg></div>
+      </div>
+
+      <!-- árvore -->
+      <div class="hs-el hs-up" style="--x:660;--y:180;--w:104;--h:168;--dd:1.2s;--lz:7">
+        <div class="hs-in hs-sway"><svg viewBox="0 0 78 126">
+          <path class="hs-f" fill="#dcc6b3" d="M34 126c1-18-1-30 1-46h10c-1 16 1 30 2 46Z"/>
+          <path class="hs-f" fill="#c2d3c3" d="M40 11c19-1 34 14 33 32 5 16-5 36-23 38-11 8-31 4-38-10-10-10-8-30 1-40 4-13 15-20 27-20Z"/>
+          <path class="hs-s" pathLength="1" stroke="#9c8270" d="M34 126c1-18-1-30 1-46M45 80c-1 16 1 30 2 46"/>
+          <path class="hs-s" pathLength="1" stroke="#7f998a" d="M39 10c19-1 34 14 33 32 5 16-5 36-23 38-11 8-31 4-38-10-10-10-8-30 1-40 4-13 15-20 27-20Z"/>
+          <path class="hs-f" fill="#e7b9c2" d="M24 40a4 4 0 1 0 8 0a4 4 0 1 0-8 0M48 30a4 4 0 1 0 8 0a4 4 0 1 0-8 0M44 56a4 4 0 1 0 8 0a4 4 0 1 0-8 0M20 62a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0"/>
+        </svg></div>
+      </div>
+
+      <!-- flores -->
+      <div class="hs-el hs-up" style="--x:424;--y:372;--w:34;--h:56;--dd:1.95s;--lz:8">
+        <div class="hs-in hs-sway"><svg viewBox="0 0 28 46"><path class="hs-s" pathLength="1" stroke="#86a08f" d="M14 46c-1-10 1-18 0-28M14 34c6-4 10-3 11 0-4 3-8 3-11 0"/><path class="hs-f" fill="#efd3d9" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><path class="hs-s" pathLength="1" stroke="#c28f9c" stroke-width="1.6" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><circle class="hs-f" cx="14" cy="12" r="3.4" fill="#f0d9a0"/></svg></div>
+      </div>
+      <div class="hs-el hs-up" style="--x:470;--y:398;--w:30;--h:46;--dd:2.05s;--lz:8">
+        <div class="hs-in hs-sway" style="animation-delay:calc(var(--intro) + .3s)"><svg viewBox="0 0 28 46"><path class="hs-s" pathLength="1" stroke="#86a08f" d="M14 46c1-10-1-18 0-28M14 30c-6-4-10-3-11 0 4 3 8 3 11 0"/><path class="hs-f" fill="#dbe8ee" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><path class="hs-s" pathLength="1" stroke="#8aa6b3" stroke-width="1.6" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><circle class="hs-f" cx="14" cy="12" r="3.4" fill="#f0d9a0"/></svg></div>
+      </div>
+      <div class="hs-el hs-up" style="--x:700;--y:366;--w:34;--h:58;--dd:2.1s;--lz:8">
+        <div class="hs-in hs-sway" style="animation-delay:calc(var(--intro) + .15s)"><svg viewBox="0 0 28 46"><path class="hs-s" pathLength="1" stroke="#86a08f" d="M14 46c-1-10 1-18 0-28M14 36c6-4 10-3 11 0-4 3-8 3-11 0"/><path class="hs-f" fill="#f3e3b6" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><path class="hs-s" pathLength="1" stroke="#cda95a" stroke-width="1.6" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><circle class="hs-f" cx="14" cy="12" r="3.4" fill="#e7b9c2"/></svg></div>
+      </div>
+      <div class="hs-el hs-up" style="--x:770;--y:358;--w:26;--h:40;--dd:2.15s;--lz:8">
+        <div class="hs-in hs-sway" style="animation-delay:calc(var(--intro) + .45s)"><svg viewBox="0 0 28 46"><path class="hs-s" pathLength="1" stroke="#86a08f" d="M14 46c1-10-1-18 0-28"/><path class="hs-f" fill="#efd3d9" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><path class="hs-s" pathLength="1" stroke="#c28f9c" stroke-width="1.6" d="M9.4 5.5a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M15.6 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M13.2 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M5.6 17.3a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0M3.2 10.0a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"/><circle class="hs-f" cx="14" cy="12" r="3.4" fill="#f0d9a0"/></svg></div>
+      </div>
+
+      <!-- borboleta -->
+      <div class="hs-el hs-up" style="--x:612;--y:318;--w:30;--h:22;--dd:2.3s;--lz:9">
+        <div class="hs-in hs-fly"><svg viewBox="0 0 24 18">
+          <g class="hs-f"><path class="hs-wing" fill="#e7c3cb" stroke="#c9a1ab" stroke-width=".8" d="M12 9C8 1 1 1 2 6s6 5 10 3c-4 3-7 7-3 8s4-5 3-8Z"/>
+          <path class="hs-wing r" fill="#e7c3cb" stroke="#c9a1ab" stroke-width=".8" d="M12 9c4-8 11-8 10-3s-6 5-10 3c4 3 7 7 3 8s-4-5-3-8Z"/></g>
+          <path class="hs-s" pathLength="1" stroke="#9b7380" stroke-width="1.4" d="M12 4v12M11 4l-2-3M13 4l2-3"/>
+        </svg></div>
+      </div>
+
+      <!-- lápis de cor -->
+      <div class="hs-pencil" style="--x:606;--y:440;--w:160;--h:13;--r:-8deg">
+        <svg viewBox="0 0 132 10" preserveAspectRatio="none"><path d="M0 1h104v8H0z" fill="#c9a1ab"/><path d="M0 1h104v2.4H0z" fill="#dcbcc4"/><path d="M0 6.6h104V9H0z" fill="#ad8390"/><path d="M104 1l20 4-20 4z" fill="#ecd9c2"/><path d="M118 3.8l6 1.2-6 1.2z" fill="#9b7380"/><path d="M0 1h6v8H0z" fill="#e8dfd4"/></svg>
+      </div>
+      <div class="hs-pencil" style="--x:636;--y:452;--w:140;--h:13;--r:-2deg">
+        <svg viewBox="0 0 118 10" preserveAspectRatio="none"><path d="M0 1h90v8H0z" fill="#a9c1cc"/><path d="M0 1h90v2.4H0z" fill="#c4d7df"/><path d="M0 6.6h90V9H0z" fill="#8aa6b3"/><path d="M90 1l20 4-20 4z" fill="#ecd9c2"/><path d="M104 3.8l6 1.2-6 1.2z" fill="#5f7481"/><path d="M0 1h6v8H0z" fill="#e8dfd4"/></svg>
+      </div>
+    </div></div></div>
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-inner">
       <div class="kicker">CRP 06/190919 · Psicologia Infantil</div>
@@ -267,27 +444,22 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
         <a class="btn-outline" href="#sobre">Conhecer a abordagem</a>
       </div>
       <div class="trust-row">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>+8 anos de experiência</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Abordagem em TCC</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Atendimento presencial</span>
       </div>
     </div>
-    <div class="hero-photo-wrap">
-    <div class="hero-photo-card reveal tilt-card">
-      <img src="assets/hero-photo.jpg" alt="Amália Oliveira, psicóloga infantil" fetchpriority="high">
-      <div class="hero-caption"><strong>Amália Oliveira</strong><span>Psicóloga · CRP 06/190919</span></div>
-    </div>
-    </div>
+    <div class="hero-visual" aria-hidden="true"></div>
   </div>
   <div class="hero-wave" aria-hidden="true"></div>
 </section>
 
 
-<div class="intro"><div class="wrap intro-grid reveal"><div class="intro-item"><strong class="num flex-num"><span class="cnt" data-to="0">0</span><span class="dash">–</span><span class="cnt" data-to="10">0</span></strong><span>anos de idade</span></div><div class="intro-item"><strong>TCC</strong><span>Terapia Cognitivo-Comportamental</span></div><div class="intro-item"><strong class="num">+<span class="cnt" data-to="8">0</span> anos</strong><span>de prática clínica infantil</span></div></div></div>
+<div class="intro"><div class="wrap intro-grid reveal"><div class="intro-item"><strong class="num flex-num"><span class="cnt" data-to="0">0</span><span class="dash">–</span><span class="cnt" data-to="10">0</span></strong><span>anos de idade</span></div><div class="intro-item"><strong>TCC</strong><span>Terapia Cognitivo-Comportamental</span></div><div class="intro-item"><strong>CRP 06/190919</strong><span>Registro profissional</span></div></div></div>
 
 <section class="section white" id="sobre"><div class="wrap">
 <div class="about-card reveal tilt-card">
   <div class="about-photo-col">
-    <div class="about-frame"><img src="assets/about-photo.jpg" alt="Amália Oliveira" loading="lazy"></div>
+    <div class="about-frame about-badge" aria-hidden="true"><span class="badge-mark">✦</span><p>“Cada criança comunica seu sofrimento de um jeito próprio.”</p></div>
     <div class="about-caption"><strong>Amália Oliveira</strong><span>Psicóloga · CRP 06/190919</span></div>
   </div>
   <div class="about-copy">
@@ -299,7 +471,6 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
     <div class="fact-strip">
       <div><strong>TCC</strong><span>Abordagem</span></div>
       <div><strong>0–10</strong><span>Faixa etária</span></div>
-      <div><strong>+8 anos</strong><span>Experiência</span></div>
       <div><strong>CRP 06/190919</strong><span>Registro</span></div>
     </div>
   </div>
@@ -313,8 +484,8 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
 <div class="sign reveal tilt-card"><span class="mark">⌁</span><h3>Transtorno do Espectro Autista</h3><p>Comunicação, interação social e regulação sensorial, junto com a rede de apoio.</p></div>
 <div class="sign reveal tilt-card"><span class="mark">○</span><h3>Dificuldades escolares</h3><p>Baixo rendimento e conflitos no ambiente escolar que impactam a autoestima.</p></div>
 <div class="sign reveal tilt-card"><span class="mark">♡</span><h3>Regulação emocional</h3><p>Explosões de raiva, choro frequente ou dificuldade em nomear o que sente.</p></div>
-<div class="sign reveal tilt-card"><span class="mark">❋</span><h3>Seletividade alimentar</h3><p>Restrição alimentar, recusa a novos sabores e refeições que viram conflito.</p></div>
 <div class="sign reveal tilt-card"><span class="mark">✧</span><h3>Transições e luto</h3><p>Mudanças de casa ou escola, separações e perdas de pessoas queridas.</p></div>
+<div class="sign reveal tilt-card"><span class="mark">◇</span><h3>Birras e comportamento desafiador</h3><p>Dificuldade em lidar com limites, oposição frequente e explosões diante de frustrações.</p></div>
 </div></div></section>
 
 <section class="section blue" id="diferenciais"><div class="wrap">
@@ -566,6 +737,12 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
     }
   }
 
+  /* Hero 3D: pausa quando fora da tela */
+  var heroScene = document.getElementById('heroScene');
+  if(heroScene && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ heroScene.classList.toggle('hs-paused', !en[0].isIntersecting); }).observe(heroScene);
+  }
+
   /* Scrollspy nav */
   var navLinks = document.querySelectorAll('nav a[href^="#"]');
   var sections = Array.prototype.map.call(navLinks, function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
@@ -610,8 +787,6 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
       else { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
     });
   });
-  document.querySelector('.faq-item').classList.add('open');
-  document.querySelector('.faq-item .faq-a').style.maxHeight = document.querySelector('.faq-item .faq-a').scrollHeight + 'px';
 })();
 </script>
 </body></html>
