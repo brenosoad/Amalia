@@ -6,21 +6,21 @@
   var menuBtn = document.getElementById('menuBtn');
   var mobileNav = document.getElementById('mobileNav');
   if (menuBtn && mobileNav) {
-    function closeMenu(){
-      menuBtn.classList.remove('open');
-      mobileNav.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
+    var closeMenu = function(){
+      menuBtn.classList.remove('open'); mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Abrir menu');
       document.body.classList.remove('nav-open');
-    }
+    };
     menuBtn.addEventListener('click', function(){
       var isOpen = mobileNav.classList.toggle('open');
       menuBtn.classList.toggle('open', isOpen);
       menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
       document.body.classList.toggle('nav-open', isOpen);
     });
-    mobileNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', closeMenu);
-    });
+    mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+    window.addEventListener('resize', function(){ if(window.innerWidth > 900) closeMenu(); });
   }
 
   /* Contact form -> WhatsApp */
@@ -66,30 +66,6 @@
     }, {threshold:0.15});
     revealEls.forEach(function(el){ io.observe(el); });
   } else { revealEls.forEach(function(el){ el.classList.add('in'); }); }
-
-  /* Animated counters */
-  var counted = false;
-  var introBox = document.querySelector('.intro');
-  if(introBox){
-    var cio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting && !counted){
-          counted = true;
-          document.querySelectorAll('.cnt').forEach(function(span){
-            var to = parseInt(span.dataset.to,10), start=performance.now(), dur=900;
-            function step(t){
-              var p = Math.min((t-start)/dur,1);
-              span.textContent = Math.round(p*to);
-              if(p<1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          });
-          cio.disconnect();
-        }
-      });
-    }, {threshold:0.4});
-    cio.observe(introBox);
-  }
 
   /* Tilt 3D on cards */
   if(!coarse && !reduce){
@@ -153,6 +129,12 @@
     }
   }
 
+  /* Hero 3D: pausa quando fora da tela */
+  var heroScene = document.getElementById('heroScene');
+  if(heroScene && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ heroScene.classList.toggle('hs-paused', !en[0].isIntersecting); }).observe(heroScene);
+  }
+
   /* Scrollspy nav */
   var navLinks = document.querySelectorAll('nav a[href^="#"]');
   var sections = Array.prototype.map.call(navLinks, function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
@@ -197,6 +179,4 @@
       else { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
     });
   });
-  document.querySelector('.faq-item').classList.add('open');
-  document.querySelector('.faq-item .faq-a').style.maxHeight = document.querySelector('.faq-item .faq-a').scrollHeight + 'px';
 })();
