@@ -23,6 +23,32 @@
     window.addEventListener('resize', function(){ if(window.innerWidth > 900) closeMenu(); });
   }
 
+  /* Máscara do WhatsApp: (16) 99999-9999 */
+  var waInput = document.getElementById('f-whatsapp');
+  if (waInput) {
+    waInput.addEventListener('input', function(){
+      var d = waInput.value.replace(/\D/g,'').slice(0,11);
+      var out = d;
+      if (d.length > 2) out = '(' + d.slice(0,2) + ') ' + d.slice(2);
+      else if (d.length > 0) out = '(' + d;
+      if (d.length > 6) out = '(' + d.slice(0,2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
+      waInput.value = out;
+    });
+  }
+
+  /* Botão flutuante do WhatsApp: some no topo e na área de contato */
+  var waFloat = document.getElementById('waFloat');
+  var contato = document.getElementById('contato');
+  if (waFloat) {
+    var nearContact = false;
+    var updateWa = function(){ waFloat.classList.toggle('is-hidden', window.scrollY < 500 || nearContact); };
+    if (contato && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(en){ nearContact = en[0].isIntersecting; updateWa(); }, {rootMargin:'0px 0px -20% 0px'}).observe(contato);
+    }
+    document.addEventListener('scroll', function(){ requestAnimationFrame(updateWa); }, {passive:true});
+    updateWa();
+  }
+
   /* Contact form -> WhatsApp */
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {

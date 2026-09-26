@@ -9,13 +9,18 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Amália Oliveira · Psicóloga Infantil em São Carlos">
 <meta property="og:description" content="Atendimento psicológico infantil acolhedor em São Carlos, SP.">
-<meta property="og:image" content="assets/footer-logo.png">
+<meta property="og:image" content="https://amaliaoliveira.com.br/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amália Oliveira, psicóloga infantil em São Carlos, SP">
+<meta property="og:url" content="https://amaliaoliveira.com.br/">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fcfaf8">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32-dark.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16-dark.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -51,6 +56,10 @@ nav a{opacity:.9}nav a:hover{color:var(--rose-ink)}
 .mobile-nav a{display:block;padding:16px 0;font-size:17px;border-bottom:1px solid var(--line);color:var(--navy)}
 .mobile-nav .navbtn{display:inline-flex;margin-top:22px;padding:14px 24px;border-bottom:0;background:var(--rose-ink);color:#fff;font-size:15px}
 body.nav-open{overflow:hidden}
+body.nav-open header{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--cream)}
+.wa-float{display:none;position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;box-shadow:0 12px 28px -10px rgba(33,55,68,.55);transition:opacity .25s ease,transform .25s ease}
+.wa-float svg{width:26px;height:26px}
+.wa-float.is-hidden,body.nav-open .wa-float{opacity:0;transform:translateY(12px) scale(.9);pointer-events:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 .hero{position:relative;overflow:hidden;padding:110px 0 90px;background:radial-gradient(60% 75% at 80% 35%,#f4e4e7 0%,rgba(244,228,231,0) 70%),radial-gradient(55% 60% at 90% 100%,#e2edf2 0%,rgba(226,237,242,0) 70%),var(--cream)}
@@ -234,6 +243,41 @@ h2{font-size:clamp(38px,4.6vw,58px);color:var(--navy);letter-spacing:-.025em}
 .faq{max-width:850px;margin:0;padding-top:14px}
 .faq-item{border-top:1px solid var(--line)}.faq-item:first-child{border-top:none}.faq-item:last-child{border-bottom:1px solid var(--line)}
 .faq-q{width:100%;background:none;border:none;cursor:pointer;list-style:none;padding:23px 0;display:flex;justify-content:space-between;gap:20px;font-size:16px;font-weight:600;font-family:inherit;color:var(--text);text-align:left}
+/* FAQ: desenho animado */
+.faq-illustration *{transform-box:fill-box}
+.fi-paper{transform-origin:50% 60%;opacity:0;translate:0 18px;rotate:-3deg;transition:opacity .7s ease,translate .9s cubic-bezier(.2,.7,.2,1),rotate .9s cubic-bezier(.2,.7,.2,1)}
+.fi-pencil1,.fi-pencil2{opacity:0;translate:40px 14px;transition:opacity .6s ease 1.9s,translate .9s cubic-bezier(.2,.7,.2,1) 1.9s}
+.fi-pencil2{transition-delay:2.05s}
+.fi-d{stroke-dasharray:1;stroke-dashoffset:1}
+.fi-fill,.fi-pop{opacity:0}
+.fi-pop{transform-origin:50% 50%;scale:.4}
+.in .fi-paper{opacity:1;translate:0 0;rotate:0deg}
+.in .fi-pencil1,.in .fi-pencil2{opacity:1;translate:0 0}
+.in .fi-d{animation:fi-draw .9s var(--d) cubic-bezier(.55,.1,.35,1) forwards}
+.in .fi-fill{animation:fi-show .6s var(--d) ease forwards}
+.in .fi-pop{animation:fi-pop .55s var(--d) cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes fi-draw{0%,98%{stroke-linecap:butt}100%{stroke-dashoffset:0;stroke-linecap:round}}
+@keyframes fi-show{to{opacity:1}}
+@keyframes fi-pop{to{opacity:1;scale:1}}
+/* loop suave depois de desenhado */
+.in .fi-cloud{transform-origin:50% 50%;animation:fi-float 6s 2.4s ease-in-out infinite}
+.in .fi-q{transform-origin:50% 100%;animation:fi-rock 6s 2.4s ease-in-out infinite}
+.in .fi-heart{animation:fi-pop .55s 1.7s cubic-bezier(.3,1.6,.5,1) forwards,fi-beat 3s 2.6s ease-in-out infinite}
+.in .fi-b1{animation:fi-pop .55s 1.2s cubic-bezier(.3,1.6,.5,1) forwards,fi-bubble 3s 2.4s ease-in-out infinite}
+.in .fi-b2{animation:fi-pop .55s 1.35s cubic-bezier(.3,1.6,.5,1) forwards,fi-bubble 3s 2.1s ease-in-out infinite}
+.in .fi-rays{transform-origin:50% 50%;animation:fi-spin 24s 2.4s linear infinite}
+.in .fi-pencil1{animation:fi-write 6s 3s ease-in-out infinite}
+@keyframes fi-float{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@keyframes fi-rock{0%,100%{rotate:0deg}25%{rotate:-6deg}75%{rotate:5deg}}
+@keyframes fi-beat{0%,100%{scale:1}12%{scale:1.22}24%{scale:1}36%{scale:1.14}48%{scale:1}}
+@keyframes fi-bubble{0%,100%{scale:1}50%{scale:1.12}}
+@keyframes fi-spin{to{rotate:360deg}}
+@keyframes fi-write{0%,62%,100%{translate:0 0}68%{translate:-6px 2px}74%{translate:3px -1px}80%{translate:-4px 2px}86%{translate:0 0}}
+@media (prefers-reduced-motion:reduce){
+.faq-illustration *{animation:none!important;transition:none!important}
+.fi-paper,.fi-pencil1,.fi-pencil2,.fi-fill,.fi-pop{opacity:1;translate:none;rotate:none;scale:1}
+.fi-d{stroke-dashoffset:0}
+}
 .faq-mark{font-size:22px;font-weight:400;flex-shrink:0;transition:transform .3s ease;color:var(--rose)}
 .faq-item.open .faq-mark{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
@@ -291,8 +335,9 @@ nav a.active{color:var(--rose-ink);font-weight:700}
 
 
 @media(max-width:900px){
+.wa-float{display:flex}
 .hero-scene{perspective-origin:70% 78%}.hs-world{width:190cqw;top:auto;bottom:0;translate:none}.hs-paper{box-shadow:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%);mask-image:linear-gradient(180deg,transparent 0,#000 16%)}.hero-veil{background:linear-gradient(180deg,rgba(252,250,248,.94) 0%,rgba(252,250,248,.85) 42%,rgba(252,250,248,0) 60%)}
-nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.signs-grid,.consult-grid,.faq-grid{grid-template-columns:1fr}.faq-side{position:static}.faq-illustration{width:160px;margin:24px auto 0;display:block}.att-grid{grid-template-columns:1fr}.att-side{grid-template-columns:1fr 1fr}.family-grid{grid-template-columns:1fr}.family-grid.open .family-card{border-left:none;border-top:1px solid rgba(33,55,68,.14);padding:28px 0 0}.family-grid.open .family-card:first-child{border-top:none;padding-top:0}.signs{grid-template-columns:1fr 1fr}.about-photo-col{max-width:280px;margin:0 auto 28px}.footer-grid{grid-template-columns:1fr 1fr}
+nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.signs-grid,.consult-grid,.faq-grid{grid-template-columns:1fr}.faq-side{position:static}.faq-illustration{width:160px;margin:24px auto 0;display:block}.att-grid{grid-template-columns:1fr}.att-side{grid-template-columns:1fr 1fr}.family-grid{grid-template-columns:1fr}.family-grid.open .family-card{border-left:none;border-top:1px solid rgba(33,55,68,.14);padding:28px 0 0}.family-grid.open .family-card:first-child{border-top:none;padding-top:0}.signs{grid-template-columns:1fr 1fr}.about-photo-col{max-width:280px;margin:0 auto 28px}.footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
 .wrap{width:calc(100% - 32px)}h1{font-size:32px;line-height:1.15;letter-spacing:-.02em}.section{padding:70px 0}.hero{min-height:auto;padding:90px 0 60px}.hero-inner{padding:0}.about-card{padding:24px}.fact-strip{grid-template-columns:1fr 1fr;gap:16px 12px}.specialty-card{padding:24px;margin-top:14px}.specialty-grid{grid-template-columns:1fr}.signs{grid-template-columns:1fr;gap:12px}.sign{transform:none!important}.att-side{grid-template-columns:1fr}.att-main{padding:28px}.price{left:28px;bottom:28px}.att-main h3{font-size:26px}.diff-grid{grid-template-columns:1fr;gap:28px}.insta-grid{align-items:flex-start;flex-direction:column}.instagram{padding:60px 0}.instagram h2{font-size:30px}.insta-mock{grid-template-columns:repeat(3,1fr);width:100%;max-width:300px}.footer-grid{grid-template-columns:1fr;gap:28px}.credit{justify-content:center;text-align:center}.cta-details{flex-direction:column;gap:16px}.contact-form{padding:22px}.form-grid{grid-template-columns:1fr}.timeline:before,.timeline-fill{left:15px}
@@ -514,20 +559,30 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
     <div class="kicker">Dúvidas frequentes</div>
     <h2>Antes de começar.</h2>
     <svg class="faq-illustration" viewBox="0 0 280 300" aria-hidden="true">
-      <g transform="rotate(-4 140 150)">
-        <rect x="30" y="22" width="220" height="250" rx="4" fill="#fffdf9"/>
-        <path d="M58 52c18-4 36 2 54-1M70 64c22-3 40 2 58-1" fill="none" stroke="#cfdfe6" stroke-width="3" stroke-linecap="round"/>
-        <path d="M86 150c-22 0-26-26-6-30-2-26 30-36 46-18 12-24 52-22 60 4 26-6 42 18 30 38 14 18-6 34-24 28-8 16-38 18-50 4-18 12-44 4-46-12-6 0-8-8-10-14Z" fill="#fff" stroke="#a8bdc7" stroke-width="2.4" stroke-linejoin="round"/>
-        <circle cx="82" cy="188" r="9" fill="#fff" stroke="#a8bdc7" stroke-width="2.2"/>
-        <circle cx="66" cy="210" r="5.5" fill="#fff" stroke="#a8bdc7" stroke-width="2"/>
-        <path d="M127 120c2-12 26-14 28 2 2 12-14 14-14 28" fill="none" stroke="#845a66" stroke-width="5" stroke-linecap="round"/>
-        <circle cx="141" cy="162" r="3.6" fill="#845a66"/>
-        <path d="M188 128c-3-6 6-10 8-3 2-7 11-3 8 3-2 5-8 8-8 8s-6-3-8-8Z" fill="#e7b9c2" stroke="#c28f9c" stroke-width="1.4"/>
-        <path d="M200 222c10 0 14 14 26 12M58 236c14-6 30 4 44-2" fill="none" stroke="#cfdccb" stroke-width="2" stroke-linecap="round"/>
-        <g transform="translate(200 44)"><circle r="12" fill="#f3e3b6" stroke="#d6b463" stroke-width="2"/><path d="M0-20v5M0 15v5M-20 0h5M15 0h5M-14-14l4 4M10 10l4 4M14-14l-4 4M-10 10l-4 4" stroke="#d9b86a" stroke-width="2" stroke-linecap="round"/></g>
+      <g class="fi-paper">
+        <g transform="rotate(-4 140 150)">
+          <rect x="30" y="22" width="220" height="250" rx="4" fill="#fffdf9"/>
+          <path class="fi-d" style="--d:.25s" pathLength="1" d="M58 52c18-4 36 2 54-1M70 64c22-3 40 2 58-1" fill="none" stroke="#cfdfe6" stroke-width="3" stroke-linecap="round"/>
+          <g class="fi-cloud">
+            <path class="fi-fill" style="--d:.9s" d="M86 150c-22 0-26-26-6-30-2-26 30-36 46-18 12-24 52-22 60 4 26-6 42 18 30 38 14 18-6 34-24 28-8 16-38 18-50 4-18 12-44 4-46-12-6 0-8-8-10-14Z" fill="#fff"/>
+            <path class="fi-d" style="--d:.45s" pathLength="1" d="M86 150c-22 0-26-26-6-30-2-26 30-36 46-18 12-24 52-22 60 4 26-6 42 18 30 38 14 18-6 34-24 28-8 16-38 18-50 4-18 12-44 4-46-12-6 0-8-8-10-14Z" fill="none" stroke="#a8bdc7" stroke-width="2.4" stroke-linejoin="round"/>
+            <g class="fi-q">
+              <path class="fi-d" style="--d:1.05s" pathLength="1" d="M127 120c2-12 26-14 28 2 2 12-14 14-14 28" fill="none" stroke="#845a66" stroke-width="5" stroke-linecap="round"/>
+              <circle class="fi-pop" style="--d:1.55s" cx="141" cy="162" r="3.6" fill="#845a66"/>
+            </g>
+            <path class="fi-heart fi-pop" style="--d:1.7s" d="M188 128c-3-6 6-10 8-3 2-7 11-3 8 3-2 5-8 8-8 8s-6-3-8-8Z" fill="#e7b9c2" stroke="#c28f9c" stroke-width="1.4"/>
+          </g>
+          <circle class="fi-b1 fi-pop" style="--d:1.2s" cx="82" cy="188" r="9" fill="#fff" stroke="#a8bdc7" stroke-width="2.2"/>
+          <circle class="fi-b2 fi-pop" style="--d:1.35s" cx="66" cy="210" r="5.5" fill="#fff" stroke="#a8bdc7" stroke-width="2"/>
+          <path class="fi-d" style="--d:1.8s" pathLength="1" d="M200 222c10 0 14 14 26 12M58 236c14-6 30 4 44-2" fill="none" stroke="#cfdccb" stroke-width="2" stroke-linecap="round"/>
+          <g transform="translate(200 44)">
+            <circle class="fi-pop" style="--d:.6s" r="12" fill="#f3e3b6" stroke="#d6b463" stroke-width="2"/>
+            <g class="fi-rays"><path class="fi-d" style="--d:.75s" pathLength="1" d="M0-20v5M0 15v5M-20 0h5M15 0h5M-14-14l4 4M10 10l4 4M14-14l-4 4M-10 10l-4 4" stroke="#d9b86a" stroke-width="2" stroke-linecap="round"/></g>
+          </g>
+        </g>
       </g>
-      <g transform="rotate(-18 150 262)"><rect x="92" y="256" width="118" height="10" fill="#c9a1ab"/><rect x="92" y="256" width="118" height="3" fill="#dcbcc4"/><rect x="92" y="263" width="118" height="3" fill="#ad8390"/><path d="M210 256l20 5-20 5z" fill="#ecd9c2"/><path d="M224 259.5l6 1.5-6 1.5z" fill="#9b7380"/></g>
-      <g transform="rotate(-6 160 282)"><rect x="112" y="276" width="104" height="10" fill="#a9c1cc"/><rect x="112" y="276" width="104" height="3" fill="#c4d7df"/><rect x="112" y="283" width="104" height="3" fill="#8aa6b3"/><path d="M216 276l20 5-20 5z" fill="#ecd9c2"/><path d="M230 279.5l6 1.5-6 1.5z" fill="#5f7481"/></g>
+      <g class="fi-pencil1"><g transform="rotate(-18 150 262)"><rect x="92" y="256" width="118" height="10" fill="#c9a1ab"/><rect x="92" y="256" width="118" height="3" fill="#dcbcc4"/><rect x="92" y="263" width="118" height="3" fill="#ad8390"/><path d="M210 256l20 5-20 5z" fill="#ecd9c2"/><path d="M224 259.5l6 1.5-6 1.5z" fill="#9b7380"/></g></g>
+      <g class="fi-pencil2"><g transform="rotate(-6 160 282)"><rect x="112" y="276" width="104" height="10" fill="#a9c1cc"/><rect x="112" y="276" width="104" height="3" fill="#c4d7df"/><rect x="112" y="283" width="104" height="3" fill="#8aa6b3"/><path d="M216 276l20 5-20 5z" fill="#ecd9c2"/><path d="M230 279.5l6 1.5-6 1.5z" fill="#5f7481"/></g></g>
     </svg>
   </div>
 <div class="faq">
@@ -550,7 +605,7 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
     <label class="sr-only" for="f-nome">Seu nome</label>
     <input id="f-nome" type="text" name="nome" placeholder="Seu nome" required>
     <label class="sr-only" for="f-whatsapp">Seu WhatsApp</label>
-    <input id="f-whatsapp" type="tel" name="whatsapp" placeholder="Seu WhatsApp" required>
+    <input id="f-whatsapp" type="tel" name="whatsapp" placeholder="(16) 99999-9999" inputmode="numeric" autocomplete="tel-national" maxlength="15" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Informe o WhatsApp com DDD, ex.: (16) 99999-9999" required>
     <label class="sr-only" for="f-idade">Idade da criança</label>
     <input id="f-idade" type="text" name="idade" placeholder="Idade da criança" style="grid-column:1/-1">
     <label class="sr-only" for="f-mensagem">Conte um pouco sobre o que você está buscando</label>
@@ -599,5 +654,6 @@ nav a:not(.navbtn){display:none}.menu-btn{display:flex}.hero-grid,.about-card,.s
 
 <div class="progress-bar" id="progressBar"></div>
 
+<a class="wa-float" id="waFloat" href="https://wa.me/5516997556576?text=Ol%C3%A1%2C%20Am%C3%A1lia!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.95A8.5 8.5 0 1 1 8.9 19.4L3 21z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5"/></svg></a>
 <script src="script.js" defer></script>
 </body></html>
