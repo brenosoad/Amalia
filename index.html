@@ -46,7 +46,7 @@ header.scrolled{background:rgba(252,250,248,.9);backdrop-filter:blur(10px);borde
 nav{display:flex;align-items:center;gap:30px;font-size:13px}
 nav a{opacity:.9}nav a:hover{color:var(--rose-ink)}
 .navbtn{padding:12px 20px;border-radius:30px;background:var(--rose-ink);color:white}
-.menu-btn{display:none;flex-direction:column;gap:5px;width:26px;padding:0;background:none;border:none;cursor:pointer}
+.menu-btn{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 9px;margin-right:-9px;background:none;border:none;cursor:pointer}
 .menu-btn span{display:block;width:100%;height:2px;background:var(--navy);transition:transform .25s ease,opacity .25s ease}
 .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .menu-btn.open span:nth-child(2){opacity:0}
@@ -206,10 +206,10 @@ h2{font-size:clamp(38px,4.6vw,58px);color:var(--navy);letter-spacing:-.025em}
 .price{position:absolute;left:48px;bottom:40px;display:inline-flex;align-items:baseline;gap:7px;background:rgba(255,255,255,.12);padding:11px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
 .price .amount{font-family:"DM Sans",sans-serif;font-weight:700;font-size:22px;color:#fff}
 .price .unit{font-size:12.5px;color:#c6ced1}
-.att-side{display:grid;gap:18px}.att-card{background:var(--pink2);border-radius:26px;padding:35px;min-height:196px}.att-card.bluecard{background:var(--blue2)}.att-main .kicker{color:var(--pink)}.att-link{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--rose-ink);border-bottom:1px solid currentColor}
+.att-side{display:grid;gap:18px}.att-card{background:var(--pink2);border-radius:26px;padding:35px;min-height:196px}.att-card.bluecard{background:var(--blue2)}.att-main .kicker{color:var(--pink)}.att-link{display:inline-block;margin-top:4px;padding:10px 0;font-size:13px;font-weight:600;color:var(--rose-ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 .att-card h3{font-size:28px;margin:18px 0 7px}.att-card p{font-size:13px;color:var(--muted)}
 
-.consult-grid{display:grid;grid-template-columns:45% 55%;gap:75px;align-items:center}
+.consult-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:75px;align-items:center}
 .quote{font-family:"Playfair Display";font-size:22px;color:var(--rose);margin-top:30px}
 .timeline{position:relative}.timeline:before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:1px;background:#c9d7dc}
 .tstep{display:grid;grid-template-columns:40px 1fr;gap:22px;padding:22px 0;position:relative}.circle{width:39px;height:39px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:12px;z-index:2}
@@ -295,7 +295,7 @@ h2{font-size:clamp(38px,4.6vw,58px);color:var(--navy);letter-spacing:-.025em}
 .contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);background:var(--cream);resize:none}
 .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--rose);outline-offset:1px}
 .contact-form .form-submit{width:100%;justify-content:center;background:var(--navy);color:#fff}
-.form-privacy{font-size:11px;color:#6b777c;text-align:center;margin-top:12px;line-height:1.5}
+.form-privacy{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
 .cta-details{margin-top:38px;padding-top:38px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:center;gap:50px;flex-wrap:wrap;font-size:13px;color:#c6ced1}
 .cta-icon{display:flex;justify-content:center;margin-bottom:10px}
 .cta-icon svg{width:20px;height:20px;color:var(--pink)}
@@ -313,8 +313,8 @@ footer{background:#1b2e38;color:white;padding:64px 0 0}
 .footer-crp{color:#97a4a9;font-size:12px;margin-top:2px}
 .credit{padding:24px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#97a4a9}
 .credit-brand{color:#d9dfe1;font-weight:700}.credit-brand:hover{color:var(--pink)}
-.credit-links{display:flex;align-items:center;gap:14px}
-.credit-links a{color:#97a4a9;display:flex}
+.credit-links{display:flex;align-items:center;gap:2px;margin:0 -8px}
+.credit-links a{color:#97a4a9;display:flex;padding:8px}
 .credit-links a:hover{color:var(--pink)}
 .credit-links svg{width:18px;height:18px}
 
@@ -334,10 +334,11 @@ nav a.active{color:var(--rose-ink);font-weight:700}
 .cnt{display:inline-block}
 
 
+@media(max-width:1180px){.signs-grid{grid-template-columns:1fr;gap:40px}.signs-grid h2{max-width:680px}}
 @media(max-width:900px){
 .wa-float{display:flex}
 .hero-scene{perspective-origin:70% 78%}.hs-world{width:190cqw;top:auto;bottom:0;translate:none}.hs-paper{box-shadow:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%);mask-image:linear-gradient(180deg,transparent 0,#000 16%)}.hero-veil{background:linear-gradient(180deg,rgba(252,250,248,.94) 0%,rgba(252,250,248,.85) 42%,rgba(252,250,248,0) 60%)}
-nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.signs-grid,.consult-grid,.faq-grid{grid-template-columns:1fr}.faq-side{position:static}.faq-illustration{width:160px;margin:24px auto 0;display:block}.att-grid{grid-template-columns:1fr}.att-side{grid-template-columns:1fr 1fr}.family-grid{grid-template-columns:1fr}.family-grid.open .family-card{border-left:none;border-top:1px solid rgba(33,55,68,.14);padding:28px 0 0}.family-grid.open .family-card:first-child{border-top:none;padding-top:0}.signs{grid-template-columns:1fr 1fr}.about-photo-col{max-width:280px;margin:0 auto 28px}.footer-grid{grid-template-columns:1fr 1fr}
+nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.signs-grid,.consult-grid,.faq-grid{grid-template-columns:1fr}.faq-side{position:static}.faq-illustration{width:160px;margin:24px auto 0;display:block}.att-grid{grid-template-columns:1fr}.att-side{grid-template-columns:1fr}.family-grid{grid-template-columns:1fr}.family-grid.open .family-card{border-left:none;border-top:1px solid rgba(33,55,68,.14);padding:28px 0 0}.family-grid.open .family-card:first-child{border-top:none;padding-top:0}.signs{grid-template-columns:1fr 1fr}.about-photo-col{max-width:280px;margin:0 auto 28px}.footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
 .wrap{width:calc(100% - 32px)}h1{font-size:32px;line-height:1.15;letter-spacing:-.02em}.section{padding:70px 0}.hero{min-height:auto;padding:90px 0 60px}.hero-inner{padding:0}.about-card{padding:24px}.fact-strip{grid-template-columns:1fr 1fr;gap:16px 12px}.specialty-card{padding:24px;margin-top:14px}.specialty-grid{grid-template-columns:1fr}.signs{grid-template-columns:1fr;gap:12px}.sign{transform:none!important}.att-side{grid-template-columns:1fr}.att-main{padding:28px}.price{left:28px;bottom:28px}.att-main h3{font-size:26px}.diff-grid{grid-template-columns:1fr;gap:28px}.insta-grid{align-items:flex-start;flex-direction:column}.instagram{padding:60px 0}.instagram h2{font-size:30px}.insta-mock{grid-template-columns:repeat(3,1fr);width:100%;max-width:300px}.footer-grid{grid-template-columns:1fr;gap:28px}.credit{justify-content:center;text-align:center}.cta-details{flex-direction:column;gap:16px}.contact-form{padding:22px}.form-grid{grid-template-columns:1fr}.timeline:before,.timeline-fill{left:15px}
@@ -646,7 +647,7 @@ nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.
     <textarea id="f-mensagem" name="mensagem" placeholder="Conte um pouco sobre o que você está buscando" rows="3" style="grid-column:1/-1"></textarea>
   </div>
   <button type="submit" class="btn form-submit">Enviar mensagem pelo WhatsApp</button>
-  <p class="form-privacy">Seus dados são usados apenas para te responder por WhatsApp — não fazemos nenhum armazenamento ou uso além disso.</p>
+  <p class="form-privacy">Seus dados são usados apenas para te responder por WhatsApp. Não armazenamos nem usamos para outros fins.</p>
 </form>
 
 <div class="cta-details">
