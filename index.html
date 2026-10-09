@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Psychologist","name":"Amália Oliveira · Psicóloga Infantil","description":"Psicoterapia infantil com Terapia Cognitivo-Comportamental para crianças de 0 a 10 anos, com atendimento presencial em São Carlos, SP.","url":"https://amaliaoliveira.com.br/","telephone":"+55-16-99755-6576","image":"https://amaliaoliveira.com.br/assets/footer-logo.png","address":{"@type":"PostalAddress","streetAddress":"Rua Eugênio de Franco Camargo, 1627","addressLocality":"São Carlos","addressRegion":"SP","addressCountry":"BR"},"areaServed":"São Carlos, SP","priceRange":"$$","identifier":"CRP 06/190919"}
+{"@context":"https://schema.org","@type":"Psychologist","name":"Amália Oliveira · Psicóloga Infantil","description":"Psicoterapia infantil com Terapia Cognitivo-Comportamental para crianças de 0 a 12 anos, com atendimento presencial em São Carlos, SP.","url":"https://amaliaoliveira.com.br/","telephone":"+55-16-99755-6576","image":"https://amaliaoliveira.com.br/assets/footer-logo.png","address":{"@type":"PostalAddress","streetAddress":"Rua Eugênio de Franco Camargo, 1627","addressLocality":"São Carlos","addressRegion":"SP","addressCountry":"BR"},"areaServed":"São Carlos, SP","priceRange":"$$","identifier":"CRP 06/190919"}
 </script>
 <style>
 :root{
@@ -160,9 +160,9 @@ h1{font-size:clamp(52px,6.4vw,84px);max-width:670px;color:var(--navy);letter-spa
 .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px;display:grid;grid-template-columns:0.8fr 1.2fr;gap:40px;align-items:start;box-shadow:0 24px 50px -32px rgba(20,32,28,.18)}
 .about-frame{border-radius:16px;overflow:hidden;aspect-ratio:3/3.3;background:#d2c4c6}
 .about-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.about-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:26px;text-align:center;background:linear-gradient(155deg,var(--blue) 0%,var(--pink) 100%)}
-.badge-mark{font-family:"Playfair Display";font-size:38px;color:var(--navy)}
-.about-badge p{font-family:"Playfair Display";font-style:italic;font-size:15px;color:var(--navy);line-height:1.55}
+.about-art{display:grid;place-items:center;background:linear-gradient(155deg,var(--blue) 0%,var(--pink) 100%)}
+.about-illus{width:84%;height:auto;overflow:visible;filter:drop-shadow(0 16px 20px rgba(33,55,68,.16))}
+.about-illus *{transform-box:fill-box}
 .about-caption{text-align:center;margin-top:14px}
 .about-caption strong{display:block;font-family:"Playfair Display";font-size:18px;font-weight:600;color:var(--navy)}
 .about-caption span{font-size:12.5px;color:var(--muted)}
@@ -274,7 +274,7 @@ h2{font-size:clamp(38px,4.6vw,58px);color:var(--navy);letter-spacing:-.025em}
 @keyframes fi-spin{to{rotate:360deg}}
 @keyframes fi-write{0%,62%,100%{translate:0 0}68%{translate:-6px 2px}74%{translate:3px -1px}80%{translate:-4px 2px}86%{translate:0 0}}
 @media (prefers-reduced-motion:reduce){
-.faq-illustration *{animation:none!important;transition:none!important}
+.faq-illustration *,.about-illus *{animation:none!important;transition:none!important}
 .fi-paper,.fi-pencil1,.fi-pencil2,.fi-fill,.fi-pop{opacity:1;translate:none;rotate:none;scale:1}
 .fi-d{stroke-dashoffset:0}
 }
@@ -496,18 +496,52 @@ nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.
 <section class="section white" id="sobre"><div class="wrap">
 <div class="about-card reveal tilt-card">
   <div class="about-photo-col">
-    <div class="about-frame about-badge" aria-hidden="true"><span class="badge-mark">✦</span><p>“Cada criança comunica seu sofrimento de um jeito próprio.”</p></div>
+    <div class="about-frame about-art" aria-hidden="true">
+      <svg class="about-illus" viewBox="0 0 240 270">
+        <g class="fi-paper" transform="rotate(-2 120 135)">
+          <rect x="18" y="16" width="204" height="238" rx="3" fill="#fffdf9"/>
+          <path d="M44 6l40 4-3 18-40-4Z" fill="#f4ead9" opacity=".85"/><path d="M160 10l40-4 2 18-40 4Z" fill="#f4ead9" opacity=".85"/>
+          <g class="fi-cloud"><path class="fi-fill" style="--d:.9s" fill="#eef4f7" d="M48 68c-7 0-8-9-1-10 0-8 11-10 16-5 4-8 17-8 21 0 8-3 15 4 11 10 4 5-1 8-5 7Z"/><path class="fi-d" style="--d:.5s" pathLength="1" fill="none" stroke="#a8bdc7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M48 68c-7 0-8-9-1-10 0-8 11-10 16-5 4-8 17-8 21 0 8-3 15 4 11 10 4 5-1 8-5 7Z"/></g>
+          <g transform="translate(184 52)"><circle class="fi-pop" style="--d:.6s" r="13" fill="#f3e3b6" stroke="#d6b463" stroke-width="2"/><path class="fi-rays" d="M0-22v5M0 17v5M-22 0h5M17 0h5M-15-15l4 4M11 11l4 4M15-15l-4 4M-11 11l-4 4" stroke="#d9b86a" stroke-width="2" stroke-linecap="round" fill="none"/></g>
+          <path class="fi-fill" style="--d:1.6s" fill="#e3ebe0" d="M18 224c40-10 80-12 120-6s60 2 84-4v36H18Z"/>
+          <path class="fi-d" style="--d:.7s" pathLength="1" fill="none" stroke="#9fb5a3" stroke-width="2" stroke-linecap="round" d="M30 222c36-8 72-10 108-4s56 2 72-3"/>
+          <path class="fi-fill" style="--d:1.5s" fill="#f1dde2" d="M86 136l-9 58h42l-9-58Z"/>
+          <g class="fi-d-g" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path class="fi-d" style="--d:.9s" pathLength="1" stroke="#9b7380" d="M86 136l-9 58h42l-9-58Z"/>
+            <circle class="fi-d" style="--d:.8s" pathLength="1" stroke="#5f7481" cx="98" cy="118" r="15"/>
+            <path class="fi-d" style="--d:1.1s" pathLength="1" stroke="#5f7481" d="M88 196v25M108 196v25M86 148l-16 28M110 148l24 26"/>
+            <path class="fi-d" style="--d:1.3s" pathLength="1" stroke="#5f7481" d="M93 122q5 4 10 0"/>
+          </g>
+          <path class="fi-fill" style="--d:1.6s" fill="#dbe8ee" d="M146 170l-5 32h30l-5-32Z"/>
+          <g fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path class="fi-d" style="--d:1.1s" pathLength="1" stroke="#7f9aa6" d="M146 170l-5 32h30l-5-32Z"/>
+            <circle class="fi-d" style="--d:1s" pathLength="1" stroke="#5f7481" cx="156" cy="157" r="11"/>
+            <path class="fi-d" style="--d:1.3s" pathLength="1" stroke="#5f7481" d="M149 204v17M163 204v17M146 178l-12-4M166 178l12 14"/>
+            <path class="fi-d" style="--d:1.4s" pathLength="1" stroke="#5f7481" d="M152 160q4 3 8 0"/>
+          </g>
+          <circle class="fi-pop" style="--d:1.5s" cx="134" cy="174" r="3" fill="#5f7481"/>
+          <circle cx="93" cy="115" r="1.3" fill="#5f7481" class="fi-fill" style="--d:1.3s"/><circle cx="103" cy="115" r="1.3" fill="#5f7481" class="fi-fill" style="--d:1.3s"/>
+          <circle cx="152" cy="155" r="1.2" fill="#5f7481" class="fi-fill" style="--d:1.4s"/><circle cx="160" cy="155" r="1.2" fill="#5f7481" class="fi-fill" style="--d:1.4s"/>
+          <path class="fi-heart fi-pop" fill="#e6a9b5" stroke="#b58e98" stroke-width="1.6" stroke-linejoin="round" d="M128 110c-11-7-13-15-7-18 3-2 7 0 7 3 0-3 4-5 7-3 6 3 4 11-7 18Z"/>
+          <g class="fi-d-g" fill="none" stroke-width="2" stroke-linecap="round">
+            <path class="fi-d" style="--d:1.6s" pathLength="1" stroke="#9fb5a3" d="M48 232v-16M196 230v-14"/>
+          </g>
+          <circle class="fi-pop" style="--d:1.8s" cx="48" cy="212" r="5" fill="#f6dbe1" stroke="#b58e98" stroke-width="1.6"/>
+          <circle class="fi-pop" style="--d:1.9s" cx="196" cy="212" r="5" fill="#f3e3b6" stroke="#d6b463" stroke-width="1.6"/>
+        </g>
+      </svg>
+    </div>
     <div class="about-caption"><strong>Amália Oliveira</strong><span>Psicóloga · CRP 06/190919</span></div>
   </div>
   <div class="about-copy">
     <span class="kicker" style="display:inline-block;margin-bottom:14px">A Psicóloga</span>
     <h2>Sobre mim</h2>
-    <p class="lead-bold">Sou Amália Oliveira, psicóloga com especialização em Terapia Cognitivo-Comportamental (TCC), no atendimento voltado para crianças de 0 a 10 anos.</p>
+    <p class="lead-bold">Sou Amália Oliveira, psicóloga com especialização em Terapia Cognitivo-Comportamental (TCC), no atendimento voltado para crianças de 0 a 12 anos.</p>
     <p>Cada criança comunica seu sofrimento de um jeito próprio: pelo brincar, pelo desenho, pelo corpo. Meu trabalho é traduzir essa linguagem em compreensão, e transformar essa compreensão em mudanças concretas dentro de casa e na escola.</p>
     <p>Os pais fazem parte de todo o processo: sem orientação constante à família, o que se constrói no consultório dificilmente se sustenta fora dele.</p>
     <div class="fact-strip">
       <div><strong>TCC</strong><span>Abordagem</span></div>
-      <div><strong>0–10</strong><span>Faixa etária</span></div>
+      <div><strong>0–12</strong><span>Faixa etária</span></div>
       <div><strong>CRP 06/190919</strong><span>Registro</span></div>
     </div>
   </div>
@@ -536,7 +570,7 @@ nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.
 </div></section>
 
 <section class="section white" id="atendimento"><div class="wrap">
-<div class="att-head"><div class="kicker">Atendimento</div><h2>Cuidado individualizado, com espaço para a criança.</h2><p class="lead">Atendimento particular para crianças de 0 a 10 anos, presencial.</p></div>
+<div class="att-head"><div class="kicker">Atendimento</div><h2>Cuidado individualizado, com espaço para a criança.</h2><p class="lead">Atendimento particular para crianças de 0 a 12 anos, presencial.</p></div>
 <div class="att-grid"><div class="att-main reveal tilt-card"><div class="kicker">Psicoterapia infantil</div><h3>Terapia Cognitivo-Comportamental</h3><p>Uma abordagem utilizada no acompanhamento psicológico infantil, considerando a realidade e as necessidades de cada criança. Sessões individuais de 50 minutos.</p></div><div class="att-side"><div class="att-card reveal tilt-card"><div class="kicker">Onde atendo</div><h3>Presencial</h3><p>Rua Eugênio de Franco Camargo, 1627, São Carlos, SP.</p><a class="att-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Eug%C3%AAnio+de+Franco+Camargo%2C+1627%2C+S%C3%A3o+Carlos+-+SP" target="_blank" rel="noopener">Ver no mapa →</a></div></div></div>
 </div></section>
 
@@ -586,7 +620,7 @@ nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.
     </svg>
   </div>
 <div class="faq">
-<div class="faq-item"><button class="faq-q">Com que idade a terapia infantil pode começar?<span class="faq-mark">+</span></button><div class="faq-a"><p>O atendimento é para crianças de 0 a 10 anos. Com os pequenos, o trabalho acontece principalmente pelo brincar e com participação próxima dos pais, que recebem orientação em todo o processo.</p></div></div>
+<div class="faq-item"><button class="faq-q">Com que idade a terapia infantil pode começar?<span class="faq-mark">+</span></button><div class="faq-a"><p>O atendimento é para crianças de 0 a 12 anos. Com os pequenos, o trabalho acontece principalmente pelo brincar e com participação próxima dos pais, que recebem orientação em todo o processo.</p></div></div>
 <div class="faq-item"><button class="faq-q">Os pais participam das sessões?<span class="faq-mark">+</span></button><div class="faq-a"><p>Sim. Além da anamnese inicial, há encontros periódicos de devolutiva e orientação, essenciais para que os avanços do consultório se mantenham em casa.</p></div></div>
 <div class="faq-item"><button class="faq-q">Quanto tempo dura o processo terapêutico?<span class="faq-mark">+</span></button><div class="faq-a"><p>Varia conforme a queixa e a criança. Após as primeiras sessões, o plano terapêutico traz uma estimativa mais precisa de prazo e frequência.</p></div></div>
 <div class="faq-item"><button class="faq-q">É necessário laudo ou encaminhamento médico?<span class="faq-mark">+</span></button><div class="faq-a"><p>Não é obrigatório para iniciar o acompanhamento. Quando há suspeita diagnóstica, a avaliação pode ocorrer em paralelo, com encaminhamento a outros profissionais se necessário.</p></div></div>
