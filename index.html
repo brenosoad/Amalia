@@ -343,6 +343,29 @@ nav{display:none}.menu-btn{display:flex}.hero-grid,.about-card,.specialty-card,.
 @media(max-width:560px){
 .wrap{width:calc(100% - 32px)}h1{font-size:32px;line-height:1.15;letter-spacing:-.02em}.section{padding:70px 0}.hero{min-height:auto;padding:90px 0 60px}.hero-inner{padding:0}.about-card{padding:24px}.fact-strip{grid-template-columns:1fr 1fr;gap:16px 12px}.specialty-card{padding:24px;margin-top:14px}.specialty-grid{grid-template-columns:1fr}.signs{grid-template-columns:1fr;gap:12px}.sign{transform:none!important}.att-side{grid-template-columns:1fr}.att-main{padding:28px}.price{left:28px;bottom:28px}.att-main h3{font-size:26px}.diff-grid{grid-template-columns:1fr;gap:28px}.insta-grid{align-items:flex-start;flex-direction:column}.instagram{padding:60px 0}.instagram h2{font-size:30px}.insta-mock{grid-template-columns:repeat(3,1fr);width:100%;max-width:300px}.footer-grid{grid-template-columns:1fr;gap:28px}.credit{justify-content:center;text-align:center}.cta-details{flex-direction:column;gap:16px}.contact-form{padding:22px}.form-grid{grid-template-columns:1fr}.timeline:before,.timeline-fill{left:15px}
 }
+
+/* celular: animação primeiro, texto centralizado */
+@media(max-width:900px){
+.hero{display:flex;flex-direction:column;padding:72px 0 56px}
+.hero-scene{position:relative;inset:auto;order:-1;flex:none;height:clamp(250px,80vw,440px);perspective-origin:58% 60%;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 84%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 84%,transparent 100%)}
+.hs-world{width:max(150cqw,calc(100cqh*800/470));top:52%;bottom:auto;right:auto;left:50%;translate:-60% -50%}
+.hs-paper{-webkit-mask-image:none;mask-image:none}
+.hero-veil,.hero-visual{display:none}
+.hero-grid{margin-top:4px}
+.hero-inner{max-width:560px;margin:0 auto}
+.section,.hero,footer{text-align:center}
+.section h2,.hero-copy,.lead,.footer-tag,.att-head{margin-left:auto;margin-right:auto}
+.hero-ctas,.trust-row{justify-content:center}
+.diff-grid,.family-grid{text-align:center}
+.diff-item{flex-direction:column;align-items:center;gap:10px}
+.diff-num{min-width:0}
+.timeline:before,.timeline-fill{display:none}
+.tstep{grid-template-columns:1fr;justify-items:center;gap:12px}
+.footer-col{align-items:center}
+.brand-footer-logo{margin:0 auto}
+.faq,.contact-form{text-align:left}
+.fact-strip>div:last-child{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
